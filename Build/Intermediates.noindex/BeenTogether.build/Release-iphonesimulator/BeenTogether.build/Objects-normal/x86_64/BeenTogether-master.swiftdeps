@@ -1,0 +1,15 @@
+version: "Apple Swift version 5.1.3 (swiftlang-1100.0.282.1 clang-1100.0.33.15)"
+options: "2e51cfee13ce9fd459a55c3fe5521ba5"
+build_time: [1588265456, 873766000]
+inputs:
+  "/Users/namtrinh/Desktop/IOS/BeenTogether/BeenTogether/SettingTableView/HeaderInfoTableViewCell.swift": [9223372036, 854775807]
+  "/Users/namtrinh/Desktop/IOS/BeenTogether/BeenTogether/SettingTableView/SettingTableViewController.swift": [9223372036, 854775807]
+  "/Users/namtrinh/Desktop/IOS/BeenTogether/BeenTogether/SettingTableView/InfoTableViewCell.swift": [9223372036, 854775807]
+  "/Users/namtrinh/Desktop/IOS/BeenTogether/BeenTogether/SettingTableView/SimpleTableViewCell.swift": [9223372036, 854775807]
+  "/Users/namtrinh/Desktop/IOS/BeenTogether/BeenTogether/SecondViewController.swift": [9223372036, 854775807]
+  "/Users/namtrinh/Desktop/IOS/BeenTogether/BeenTogether/FirstViewController.swift": [9223372036, 854775807]
+  "/Users/namtrinh/Desktop/IOS/BeenTogether/BeenTogether/MenuTableViewController.swift": [9223372036, 854775807]
+  "/Users/namtrinh/Desktop/IOS/BeenTogether/BeenTogether/SettingTableView/SwitchTableViewCell.swift": [9223372036, 854775807]
+  "/Users/namtrinh/Desktop/IOS/BeenTogether/BeenTogether/SlideInTransition.swift": [9223372036, 854775807]
+  "/Users/namtrinh/Desktop/IOS/BeenTogether/BeenTogether/AppDelegate.swift": [9223372036, 854775807]
+  "/Users/namtrinh/Desktop/IOS/BeenTogether/BeenTogether/SceneDelegate.swift": [9223372036, 854775807]

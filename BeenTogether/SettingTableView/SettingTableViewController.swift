@@ -130,7 +130,7 @@ class SettingTableViewController: UIViewController {
     var thirdSectionInfoToCell = [thirdSectionInfo]()
     var fourthSectionInfoToCell = [fourthSectionInfo]()
     var fifthSectionInfoToCell = [fifthSectionInfo]()
-    var delegate: settingViewDelegate?
+    weak var delegate: settingViewDelegate?
     
     
     override func viewDidLoad() {
@@ -304,6 +304,8 @@ extension SettingTableViewController: UITableViewDataSource {
                 alert.addAction(UIAlertAction(title: "OK", style: .destructive, handler: { (changePerson1) in
                     let nameperson1: String = (alert.textFields?[0].text!)!
                     self.getchangeperson1 = nameperson1
+                    self.firstSectionInfoToCell[indexPath.row] = .person1(name: nameperson1)
+                    tableView.reloadData()
                 }))
                 alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
                 present(alert,animated: true, completion: nil)
@@ -316,6 +318,8 @@ extension SettingTableViewController: UITableViewDataSource {
                 alert.addAction(UIAlertAction(title: "OK", style: .destructive, handler: { (changePerson1) in
                     let nameperson2: String = (alert.textFields?[0].text!)!
                     self.getchangeperson2 = nameperson2
+                    self.firstSectionInfoToCell[indexPath.row] = .person2(name: nameperson2)
+                    tableView.reloadData()
                 }))
                 alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
                 present(alert,animated: true, completion: nil)
@@ -328,6 +332,8 @@ extension SettingTableViewController: UITableViewDataSource {
                 alert.addAction(UIAlertAction(title: "OK", style: .destructive, handler: { (changePerson1) in
                     let title: String = (alert.textFields?[0].text!)!
                     self.getchangetitle = title
+                    self.firstSectionInfoToCell[indexPath.row] = .changeTitle(title: title)
+                    tableView.reloadData()
                 }))
                 alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
                 present(alert,animated: true, completion: nil)
@@ -340,6 +346,8 @@ extension SettingTableViewController: UITableViewDataSource {
                 alert.addAction(UIAlertAction(title: "OK", style: .destructive, handler: { (changePerson1) in
                     let bottom: String = (alert.textFields?[0].text!)!
                     self.getchangebottom = bottom
+                    self.firstSectionInfoToCell[indexPath.row] = .changeBottomText(text: bottom)
+                    tableView.reloadData()
                 }))
                 alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
                 present(alert,animated: true, completion: nil)
@@ -396,6 +404,6 @@ extension SettingTableViewController: UITableViewDelegate {
     }
 }
 
-protocol settingViewDelegate {
+protocol settingViewDelegate: class {
     func passData(data : firstSectionInfomation)
 }

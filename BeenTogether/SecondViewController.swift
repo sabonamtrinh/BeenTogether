@@ -22,10 +22,7 @@ class SecondViewController: UIViewController, UIImagePickerControllerDelegate, U
     let transition = SlideInTransition()
     var count = 0
     var day = ""
-    var nameperson1 = "Person 1"
-    var nameperson2 = "Person 2"
-    var changetitle = "Been Together"
-    var changebottom = "To day"
+    
     var data = [firstSectionInfomation]()
     
     override func viewDidLoad() {
@@ -43,8 +40,7 @@ class SecondViewController: UIViewController, UIImagePickerControllerDelegate, U
         alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
         alert.addAction(UIAlertAction(title: "OK", style: .destructive) { (getTitle) in
             let title:String = (alert.textFields?[0].text!)!
-            self.changetitle = title
-            self.titleBtn.setTitle(self.changetitle, for: .normal )
+            self.titleBtn.setTitle(title, for: .normal )
         })
         present(alert, animated: true, completion: nil)
     }
@@ -56,8 +52,7 @@ class SecondViewController: UIViewController, UIImagePickerControllerDelegate, U
         }
         alert.addAction(UIAlertAction(title: "OK", style: .destructive) { (getBottom) in
             let bottom:String = (alert.textFields?[0].text!)!
-            self.changebottom = bottom
-            self.bottomBtn.setTitle(self.changebottom, for: .normal)
+            self.bottomBtn.setTitle(bottom, for: .normal)
         })
         alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
         present(alert, animated: true, completion: nil)
@@ -70,8 +65,7 @@ class SecondViewController: UIViewController, UIImagePickerControllerDelegate, U
         }
         alert.addAction(UIAlertAction(title: "OK", style: .destructive) { (getBottom) in
             let namePerson1:String = (alert.textFields?[0].text!)!
-            self.nameperson1 = namePerson1
-            self.changeNamePerson1Btn.setTitle(self.nameperson1, for: .normal)
+            self.changeNamePerson1Btn.setTitle(namePerson1, for: .normal)
         })
         alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
         present(alert, animated: true, completion: nil)
@@ -84,8 +78,7 @@ class SecondViewController: UIViewController, UIImagePickerControllerDelegate, U
         }
         alert.addAction(UIAlertAction(title: "OK", style: .destructive) { (getBottom) in
             let namePerson2:String = (alert.textFields?[0].text!)!
-            self.nameperson2 = namePerson2
-            self.changeNamePerson2Btn.setTitle(self.nameperson2, for: .normal)
+            self.changeNamePerson2Btn.setTitle(namePerson2, for: .normal)
         })
         alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
         present(alert, animated: true, completion: nil)
@@ -179,7 +172,6 @@ class SecondViewController: UIViewController, UIImagePickerControllerDelegate, U
             UIGraphicsEndImageContext()
         }))
         alert.addAction(UIAlertAction(title: "Hide AD for a while", style: .destructive, handler: { (hideadforawhile) in
-            //
         }))
         alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
         self.present(alert,animated: true, completion: nil)
@@ -223,13 +215,9 @@ extension SecondViewController: UIViewControllerTransitioningDelegate {
 
 extension SecondViewController: settingViewDelegate {
     func passData(data: firstSectionInfomation) {
-        self.dismiss(animated: true){
-            print(data.namePerson1)
-            self.nameperson1 = data.namePerson1
-            print(self.nameperson1)
-            self.nameperson2 = data.namePerson1
-            self.person1Btn.reloadInputViews()
-        //reloadName(person1: data[0].namePerson1, person2: data[0].namePerson2, title: data[0].changeTitle, bottom: data[0].changeBottomText)
-        }
+        self.changeNamePerson1Btn.setTitle(data.namePerson1, for: .normal)
+        self.changeNamePerson2Btn.setTitle(data.namePerson2, for: .normal)
+        self.titleBtn.setTitle(data.changeTitle, for: .normal)
+        self.bottomBtn.setTitle(data.changeBottomText, for: .normal)
     }
 }
