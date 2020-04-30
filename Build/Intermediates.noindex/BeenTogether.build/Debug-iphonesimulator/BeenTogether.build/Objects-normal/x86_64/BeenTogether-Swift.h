@@ -286,9 +286,13 @@ SWIFT_CLASS("_TtC12BeenTogether20SecondViewController")
 @property (nonatomic, weak) IBOutlet UIButton * _Null_unspecified bottomBtn;
 @property (nonatomic, weak) IBOutlet UIButton * _Null_unspecified person1Btn;
 @property (nonatomic, weak) IBOutlet UIButton * _Null_unspecified person2Btn;
+@property (nonatomic, weak) IBOutlet UIButton * _Null_unspecified changeNamePerson1Btn;
+@property (nonatomic, weak) IBOutlet UIButton * _Null_unspecified changeNamePerson2Btn;
 - (void)viewDidLoad;
 - (IBAction)handelTogetherButton:(id _Nonnull)sender;
 - (IBAction)handelTodayButton:(id _Nonnull)sender;
+- (IBAction)handelChangeNamePerson1Button:(id _Nonnull)sender;
+- (IBAction)handelChangeNamePerson2Button:(id _Nonnull)sender;
 - (IBAction)handelPerson1Button:(id _Nonnull)sender;
 - (IBAction)handelPerson2Button:(id _Nonnull)sender;
 - (void)imagePickerController:(UIImagePickerController * _Nonnull)picker didFinishPickingMediaWithInfo:(NSDictionary<UIImagePickerControllerInfoKey, id> * _Nonnull)info;
@@ -300,6 +304,8 @@ SWIFT_CLASS("_TtC12BeenTogether20SecondViewController")
 - (nonnull instancetype)initWithNibName:(NSString * _Nullable)nibNameOrNil bundle:(NSBundle * _Nullable)nibBundleOrNil OBJC_DESIGNATED_INITIALIZER;
 - (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)coder OBJC_DESIGNATED_INITIALIZER;
 @end
+
+
 
 @protocol UIViewControllerAnimatedTransitioning;
 
@@ -313,6 +319,7 @@ SWIFT_CLASS("_TtC12BeenTogether26SettingTableViewController")
 @interface SettingTableViewController : UIViewController
 @property (nonatomic, weak) IBOutlet UITableView * _Null_unspecified settingTableView;
 - (void)viewDidLoad;
+- (void)handelBackView;
 - (nonnull instancetype)initWithNibName:(NSString * _Nullable)nibNameOrNil bundle:(NSBundle * _Nullable)nibBundleOrNil OBJC_DESIGNATED_INITIALIZER;
 - (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)coder OBJC_DESIGNATED_INITIALIZER;
 @end
@@ -330,6 +337,7 @@ SWIFT_CLASS("_TtC12BeenTogether26SettingTableViewController")
 - (NSInteger)numberOfSectionsInTableView:(UITableView * _Nonnull)tableView SWIFT_WARN_UNUSED_RESULT;
 - (UITableViewCell * _Nonnull)tableView:(UITableView * _Nonnull)tableView cellForRowAtIndexPath:(NSIndexPath * _Nonnull)indexPath SWIFT_WARN_UNUSED_RESULT;
 - (UIView * _Nullable)tableView:(UITableView * _Nonnull)tableView viewForHeaderInSection:(NSInteger)section SWIFT_WARN_UNUSED_RESULT;
+- (void)tableView:(UITableView * _Nonnull)tableView didSelectRowAtIndexPath:(NSIndexPath * _Nonnull)indexPath;
 @end
 
 

@@ -621,6 +621,7 @@ depends-member:
 - !private ["s38__DefaultCustomPlaygroundQuickLookableP", "date"]
 - !private ["s38__DefaultCustomPlaygroundQuickLookableP", "isHidden"]
 - !private ["s38__DefaultCustomPlaygroundQuickLookableP", "text"]
+- !private ["12BeenTogether19settingViewDelegateP", "day"]
 depends-nominal:
 - !private "SK"
 - !private "So15CALayerDelegateP"
@@ -700,6 +701,7 @@ depends-nominal:
 - "10Foundation37_KeyValueCodingAndObservingPublishingP"
 - !private "s21_ObjectiveCBridgeableP"
 - !private "s38__DefaultCustomPlaygroundQuickLookableP"
+- !private "12BeenTogether19settingViewDelegateP"
 depends-dynamic-lookup:
 depends-external:
 - "/Users/namtrinh/Downloads/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator13.2.sdk/usr/lib/swift/ObjectiveC.swiftmodule/x86_64.swiftinterface"

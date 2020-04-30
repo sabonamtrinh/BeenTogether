@@ -1,12 +1,12 @@
 version: "Apple Swift version 5.1.3 (swiftlang-1100.0.282.1 clang-1100.0.33.15)"
 options: "a5420e2091aaa0feaf26a385f8be196c"
-build_time: [1587662833, 738585000]
+build_time: [1588263744, 357562000]
 inputs:
   "/Users/namtrinh/Desktop/IOS/BeenTogether/BeenTogether/SettingTableView/HeaderInfoTableViewCell.swift": [1587629525, 913052712]
-  "/Users/namtrinh/Desktop/IOS/BeenTogether/BeenTogether/SettingTableView/SettingTableViewController.swift": [1587662828, 180845154]
-  "/Users/namtrinh/Desktop/IOS/BeenTogether/BeenTogether/SettingTableView/InfoTableViewCell.swift": [1587657211, 307676029]
+  "/Users/namtrinh/Desktop/IOS/BeenTogether/BeenTogether/SettingTableView/SettingTableViewController.swift": [1588262038, 35035107]
+  "/Users/namtrinh/Desktop/IOS/BeenTogether/BeenTogether/SettingTableView/InfoTableViewCell.swift": [1587699736, 530128147]
   "/Users/namtrinh/Desktop/IOS/BeenTogether/BeenTogether/SettingTableView/SimpleTableViewCell.swift": [1587655631, 875653307]
-  "/Users/namtrinh/Desktop/IOS/BeenTogether/BeenTogether/SecondViewController.swift": [1587661552, 604733204]
+  "/Users/namtrinh/Desktop/IOS/BeenTogether/BeenTogether/SecondViewController.swift": [1588263744, 289522455]
   "/Users/namtrinh/Desktop/IOS/BeenTogether/BeenTogether/FirstViewController.swift": [1587099841, 30559805]
   "/Users/namtrinh/Desktop/IOS/BeenTogether/BeenTogether/MenuTableViewController.swift": [1587109360, 703567913]
   "/Users/namtrinh/Desktop/IOS/BeenTogether/BeenTogether/SettingTableView/SwitchTableViewCell.swift": [1587655560, 693074033]

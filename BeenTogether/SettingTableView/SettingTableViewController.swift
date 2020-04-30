@@ -33,6 +33,12 @@ struct fifthSectionInfomation {
     var purchaseAdfreeVersion : String
 }
 class SettingTableViewController: UIViewController {
+    
+    let numberOfSetion = 5
+    var getchangeperson1: String = "Person 1"
+    var getchangeperson2: String = ""
+    var getchangetitle: String = ""
+    var getchangebottom: String = ""
 
     enum Section {
         static let firstSection = (sectionIndex: 0, numberofRows: 4 )
@@ -49,6 +55,21 @@ class SettingTableViewController: UIViewController {
         static let badge = 0
         static let usePasscodeLock = 1
         static let purchaseAdfreeVersion = 3
+    }
+    
+    enum Row {
+        static let person1 = 0
+        static let person2 = 1
+        static let changeTitle = 2
+        static let changeBottomText = 3
+        static let startDate = 0
+        static let backgroundImage = 0
+        static let nameTextColor = 0
+        static let dayTextColor = 1
+        static let barColorr = 2
+        static let language = 3
+        static let font = 5
+        static let credits = 2
     }
     
     @IBOutlet weak var settingTableView: UITableView!
@@ -109,8 +130,8 @@ class SettingTableViewController: UIViewController {
     var thirdSectionInfoToCell = [thirdSectionInfo]()
     var fourthSectionInfoToCell = [fourthSectionInfo]()
     var fifthSectionInfoToCell = [fifthSectionInfo]()
+    var delegate: settingViewDelegate?
     
-    let numberOfSetion = 5
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -120,7 +141,15 @@ class SettingTableViewController: UIViewController {
         thirdSectionInfoToCell = thirdSectionMapData(info: thirdSectioninfo)
         fourthSectionInfoToCell = fourthSectionMapData(info: fourthSectioninfo)
         fifthSectionInfoToCell = fifthSectionMapData(info: fifthSectioninfo)
+        self.navigationItem.leftBarButtonItem = UIBarButtonItem(barButtonSystemItem: .done, target: self, action: #selector(handelBackView))
         settingTableView.reloadData()
+    }
+    
+    @objc func handelBackView () {
+        let Data = firstSectionInfomation(namePerson1: getchangeperson1 , namePerson2: getchangeperson2, changeTitle: getchangetitle, changeBottomText: getchangebottom)
+        delegate?.passData(data: Data)
+        print(Data.namePerson1)
+        self.navigationController?.popViewController(animated: true)
     }
     
     func SetUp() {
@@ -264,6 +293,97 @@ extension SettingTableViewController: UITableViewDataSource {
         }
         return UITableViewCell()
     }
+    
+      func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if indexPath.section == Section.firstSection.sectionIndex {
+            if indexPath.row == Row.person1 {
+                let alert:UIAlertController = UIAlertController(title: "Person 1 Name", message: "", preferredStyle: .alert)
+                alert.addTextField { (txtperson1) in
+                    txtperson1.placeholder = "New Name Person 1"
+                }
+                alert.addAction(UIAlertAction(title: "OK", style: .destructive, handler: { (changePerson1) in
+                    let nameperson1: String = (alert.textFields?[0].text!)!
+                    self.getchangeperson1 = nameperson1
+                }))
+                alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
+                present(alert,animated: true, completion: nil)
+            }
+            if indexPath.row == Row.person2 {
+                let alert:UIAlertController = UIAlertController(title: "Person 2 Name", message: "", preferredStyle: .alert)
+                alert.addTextField { (txtperson1) in
+                    txtperson1.placeholder = "New Name Person 2"
+                }
+                alert.addAction(UIAlertAction(title: "OK", style: .destructive, handler: { (changePerson1) in
+                    let nameperson2: String = (alert.textFields?[0].text!)!
+                    self.getchangeperson2 = nameperson2
+                }))
+                alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
+                present(alert,animated: true, completion: nil)
+            }
+            if indexPath.row == Row.changeTitle {
+                let alert:UIAlertController = UIAlertController(title: "Change Title", message: "", preferredStyle: .alert)
+                alert.addTextField { (txtperson1) in
+                    txtperson1.placeholder = "New Title"
+                }
+                alert.addAction(UIAlertAction(title: "OK", style: .destructive, handler: { (changePerson1) in
+                    let title: String = (alert.textFields?[0].text!)!
+                    self.getchangetitle = title
+                }))
+                alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
+                present(alert,animated: true, completion: nil)
+            }
+            if indexPath.row == Row.changeBottomText {
+                let alert:UIAlertController = UIAlertController(title: "Change Bottom text", message: "", preferredStyle: .alert)
+                alert.addTextField { (bottom) in
+                    bottom.placeholder = "New Bottom text"
+                }
+                alert.addAction(UIAlertAction(title: "OK", style: .destructive, handler: { (changePerson1) in
+                    let bottom: String = (alert.textFields?[0].text!)!
+                    self.getchangebottom = bottom
+                }))
+                alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
+                present(alert,animated: true, completion: nil)
+            }
+        }
+        
+        if indexPath.section == Section.secondSection.sectionIndex {
+            if indexPath.row == Row.startDate {
+                
+            }
+        }
+        
+        if indexPath.section == Section.thirdSection.sectionIndex {
+            
+        }
+        
+        if indexPath.section == Section.fourthSection.sectionIndex {
+            if indexPath.row == Row.nameTextColor {
+                
+            }
+            if indexPath.row == Row.dayTextColor {
+                
+            }
+            if indexPath.row == Row.barColorr {
+                
+            }
+            if indexPath.row == Row.language {
+                
+            }
+            if indexPath.row == Row.font {
+                
+            }
+        }
+        
+        if indexPath.section == Section.thirdSection.sectionIndex {
+            if indexPath.row == Row.credits {
+                
+            }
+            if indexPath.row == SpecialRow.purchaseAdfreeVersion {
+                
+            }
+        }
+    }
+    
    
 }
 
@@ -274,4 +394,8 @@ extension SettingTableViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         return 30
     }
+}
+
+protocol settingViewDelegate {
+    func passData(data : firstSectionInfomation)
 }
